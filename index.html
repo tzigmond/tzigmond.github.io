@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Teagan Zigmond — Systems &amp; Security Engineering</title>
-<meta name="description" content="Teagan Zigmond — computer science student in Denver building low-latency systems and security tooling. Portfolio featuring LOBSTER (C++ order book) and a 3D missile guidance simulation.">
-<meta property="og:title" content="Teagan Zigmond — Portfolio">
+<title>Teagan Zigmond · Systems and Security Engineering</title>
+<meta name="description" content="Teagan Zigmond is a computer science student in Denver building low-latency systems and security tooling. Portfolio featuring LOBSTER (a C++ order book) and a 3D missile guidance simulation.">
+<meta property="og:title" content="Teagan Zigmond · Portfolio">
 <meta property="og:description" content="Systems programming, low-latency infrastructure, and security.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23c05a2c'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%23f3ecdb' stroke-width='2.5'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=3">
 <script>
   (function () {
     var t = localStorage.getItem("theme");
@@ -45,8 +45,8 @@
     <h1>Teagan Zigmond</h1>
     <p class="hero-tagline">
       Computer science student building <strong>low-latency systems</strong> and
-      <strong>security tooling</strong> — from nanosecond order books to guidance
-      simulations, and the occasional deliberately-broken web app.
+      <strong>security tooling</strong>, from nanosecond order books to guidance
+      simulations, and the occasional deliberately broken web app.
     </p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="#projects">See my work</a>
@@ -68,7 +68,7 @@
 <main>
   <section id="projects" class="section">
     <div class="section-head">
-      <span class="section-kicker">01 — Selected work</span>
+      <span class="section-kicker">01 / Selected work</span>
       <h2>Projects</h2>
     </div>
 
@@ -79,9 +79,9 @@
           <span class="badge badge-orange">Flagship</span>
         </div>
         <p class="project-lede">
-          A trading order book — the structure every exchange uses to match buyers
-          with sellers — rebuilt in C++ for raw speed. It streams live Bitcoin prices
-          from Kraken and updates the book in billionths of a second, using a
+          A trading order book is the structure every exchange uses to match buyers
+          with sellers. This one is built in C++ for raw speed: it streams live Bitcoin
+          prices from Kraken and updates the book in billionths of a second, using a
           lock-free design that never stalls, then feeds it all to a live web dashboard.
         </p>
 
@@ -125,15 +125,18 @@
           <span class="badge badge-green">Simulation</span>
         </div>
         <p class="project-lede">
-          A physics simulation of a guided missile chasing a fighter jet. The missile
-          steers using proportional navigation — the same guidance principle real
-          missiles use — while the jet tries to escape with hard evasive turns. The
-          whole pursuit plays out as an animated 3D flight path with a live readout.
+          A physics simulation of a guided missile intercepting a maneuvering fighter
+          jet, where every parameter is grounded in real sources. The missile is
+          modeled on the AIM-120 AMRAAM and the target on the F-16C Fighting Falcon,
+          with speeds, g-limits, and pilot reaction times drawn from Jane's, USAF
+          flight manuals, and military handbooks. The missile steers using proportional
+          navigation, the same guidance law real interceptors use, while the jet reacts
+          to its radar warning receiver and breaks into hard 9g evasive turns.
         </p>
         <div class="stat-grid stat-grid-3">
-          <div class="stat"><span class="stat-num">4×</span><span class="stat-label">the speed of sound at top speed</span></div>
-          <div class="stat"><span class="stat-num">40×</span><span class="stat-label">the force of gravity in hard turns</span></div>
-          <div class="stat"><span class="stat-num">3D</span><span class="stat-label">real-time animated intercept</span></div>
+          <div class="stat"><span class="stat-num">AIM-120</span><span class="stat-label">AMRAAM-class missile, modeled on real specs</span></div>
+          <div class="stat"><span class="stat-num">F-16C</span><span class="stat-label">evading jet that reacts and breaks at 9g</span></div>
+          <div class="stat"><span class="stat-num">Cited</span><span class="stat-label">every value sourced from Jane's and USAF manuals</span></div>
         </div>
         <div class="tags">
           <span>Python</span><span>NumPy</span><span>Matplotlib</span><span>Physics</span>
@@ -147,7 +150,7 @@
 
   <section id="skills" class="section section-alt">
     <div class="section-head">
-      <span class="section-kicker">02 — Toolkit</span>
+      <span class="section-kicker">02 / Toolkit</span>
       <h2>Skills &amp; tools</h2>
     </div>
     <div class="skills-grid">
@@ -172,27 +175,29 @@
 
   <section id="about" class="section">
     <div class="section-head">
-      <span class="section-kicker">03 — Background</span>
+      <span class="section-kicker">03 / Background</span>
       <h2>About</h2>
     </div>
     <div class="about-body">
       <p>
-        I'm a computer science student based in Denver, drawn to the parts of software
-        that reward precision — where the difference between a good and a great solution
-        is measured in nanoseconds or in whether an attacker can slip through.
+        I'm a computer science student in Denver, and I'm the kind of person who gets
+        genuinely absorbed by a hard problem. Give me something technical to work
+        through, in code or in math, and I want to understand it all the way down, not
+        just get it to run. That's really what pulled me into computer science and math
+        in the first place. They reward precision and stubborn problem solving, which
+        are the things I enjoy most.
       </p>
       <p>
-        My work spans low-latency systems programming, real-time infrastructure, and
-        security. I like projects that force me to understand a problem all the way down:
-        how a limit order book stays fast under load, how a guidance algorithm converges
-        on a moving target, or how a web app breaks under a crafted request.
+        When I'm not at a keyboard, I powerlift and get outside to hike as much as I can.
+        It's the same idea that keeps me hooked on engineering: pick something hard, stay
+        consistent, and keep pushing for more.
       </p>
     </div>
   </section>
 
   <section id="contact" class="section section-alt">
     <div class="section-head">
-      <span class="section-kicker">04 — Get in touch</span>
+      <span class="section-kicker">04 / Get in touch</span>
       <h2>Contact</h2>
     </div>
     <div class="contact-body">
@@ -217,6 +222,6 @@
   <a href="https://github.com/tzigmond" target="_blank" rel="noopener">GitHub</a>
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js?v=3"></script>
 </body>
 </html>
