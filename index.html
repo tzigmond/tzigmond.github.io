@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teagan Zigmond — Portfolio</title>
+<meta name="description" content="Teagan Zigmond — systems programming, low-latency infrastructure, and security projects.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a href="#top" class="nav-brand">tzigmond</a>
+  <div class="nav-links">
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <a href="https://github.com/tzigmond" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</nav>
+
+<header id="top" class="hero">
+  <p class="hero-eyebrow">Denver, CO</p>
+  <h1>Teagan Zigmond</h1>
+  <p class="hero-tagline">Systems programming &amp; security — building low-latency infrastructure and pulling apart how things break.</p>
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="#projects">View projects</a>
+    <a class="btn btn-ghost" href="https://github.com/tzigmond" target="_blank" rel="noopener">github.com/tzigmond</a>
+  </div>
+</header>
+
+<main>
+  <section id="projects" class="projects">
+    <h2 class="section-title">Projects</h2>
+
+    <article class="project project-featured">
+      <div class="project-header">
+        <h3>LOBSTER</h3>
+        <span class="project-tag">flagship</span>
+      </div>
+      <p class="project-desc">
+        A high-performance C++20 limit order book that streams live BTC/USD market data from Kraken's
+        WebSocket API straight into a React dashboard. Built around a lock-free, cache-line-aligned
+        SPSC ring buffer and a flat-array order book — no trees, no locks on the hot path.
+      </p>
+      <ul class="project-stats">
+        <li><strong>32ns</strong> p50 insert / update / delete</li>
+        <li><strong>128ns</strong> p99.9 tail latency</li>
+        <li><strong>16ns</strong> best bid/ask lookup</li>
+        <li>2M ops benchmarked, 50-level depth</li>
+      </ul>
+      <div class="project-arch">
+        <span>Network thread (Boost.Beast + simdjson)</span>
+        <span>→</span>
+        <span>Lock-free SPSC queue</span>
+        <span>→</span>
+        <span>Order book engine</span>
+        <span>→</span>
+        <span>FastAPI bridge → React UI</span>
+      </div>
+      <div class="project-tech">
+        <span>C++20</span><span>Boost.Beast</span><span>simdjson</span><span>CMake</span>
+        <span>FastAPI</span><span>React</span><span>TypeScript</span><span>WebSocket</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/tzigmond/lobster" target="_blank" rel="noopener">Source →</a>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project-header">
+        <h3>Missile Guidance Sim</h3>
+      </div>
+      <p class="project-desc">
+        A 3D simulation of an AIM-120 AMRAAM pursuing an F-16C using proportional navigation guidance.
+        Models boost-phase acceleration to Mach 4, gravity, g-limits, radar-warning-receiver detection,
+        and chained S-turn evasion — rendered as an animated 3D flight path with a live HUD.
+      </p>
+      <ul class="project-stats">
+        <li>Proportional navigation, N = 5</li>
+        <li>40g missile / 9g airframe limits</li>
+        <li>State machine: FLYING / HIT / MISSED</li>
+      </ul>
+      <div class="project-tech">
+        <span>Python</span><span>NumPy</span><span>Matplotlib</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/tzigmond/missile-guidance-sim" target="_blank" rel="noopener">Source →</a>
+      </div>
+    </article>
+  </section>
+
+  <section id="about" class="about">
+    <h2 class="section-title">About</h2>
+    <p>
+      I'm a computer science student based in Denver, working across systems programming, low-latency
+      infrastructure, and security. I like projects that force me to think in nanoseconds or in
+      attacker mindset — order books, guidance algorithms, and the occasional deliberately broken
+      web app.
+    </p>
+  </section>
+</main>
+
+<footer class="footer">
+  <a href="https://github.com/tzigmond" target="_blank" rel="noopener">GitHub</a>
+  <span class="footer-sep">·</span>
+  <span>&copy; <span id="year"></span> Teagan Zigmond</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
