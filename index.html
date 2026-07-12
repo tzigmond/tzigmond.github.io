@@ -150,6 +150,61 @@
         </div>
       </div>
     </article>
+
+    <article class="project">
+      <div class="project-body">
+        <div class="project-title-row">
+          <h3>Security Lab</h3>
+          <span class="badge badge-green">Security</span>
+        </div>
+        <p class="project-lede">
+          A hands-on web security project with two sides. A deliberately vulnerable
+          Flask app carries real flaws (SQL injection, IDOR, broken access control,
+          session forgery) and logs every attack it attracts, paired with a hardened
+          rewrite that fixes each one. A companion notebook then uses Gemini to read
+          the attack logs and score each attempt for risk, so the same project covers
+          building vulnerabilities, defending against them, and analyzing the traffic.
+        </p>
+        <div class="stat-grid stat-grid-3">
+          <div class="stat"><span class="stat-num">Attack</span><span class="stat-label">SQL injection, IDOR, and session forgery, built to work</span></div>
+          <div class="stat"><span class="stat-num">Defense</span><span class="stat-label">the same app rebuilt with hashing and rate limiting</span></div>
+          <div class="stat"><span class="stat-num">AI triage</span><span class="stat-label">Gemini risk-scores the captured attack logs</span></div>
+        </div>
+        <div class="tags">
+          <span>Python</span><span>Flask</span><span>SQLite</span><span>pyshark</span><span>Gemini</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/tzigmond/security-lab" target="_blank" rel="noopener">View source ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project-body">
+        <div class="project-title-row">
+          <h3>blackhole</h3>
+          <span class="badge badge-orange">Tool</span>
+        </div>
+        <p class="project-lede">
+          A terminal password-cracking demonstrator with a live interface. It runs
+          brute-force, dictionary, and mask attacks against a target and shows the
+          search space, attempt rate, and progress in real time. Watching a keyspace
+          explode from thousands to trillions as you add characters makes the case for
+          password length better than any lecture.
+        </p>
+        <div class="stat-grid stat-grid-3">
+          <div class="stat"><span class="stat-num">3 modes</span><span class="stat-label">brute-force, dictionary, and mask attacks</span></div>
+          <div class="stat"><span class="stat-num">Live</span><span class="stat-label">real-time attempts, rate, and keyspace coverage</span></div>
+          <div class="stat"><span class="stat-num">Keyspace</span><span class="stat-label">shows the math before you start</span></div>
+        </div>
+        <div class="tags">
+          <span>Python</span><span>rich</span><span>Terminal UI</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/tzigmond/blackhole" target="_blank" rel="noopener">View source ↗</a>
+        </div>
+      </div>
+    </article>
   </section>
 
   <section id="skills" class="section section-alt">
@@ -214,6 +269,10 @@
         <a class="contact-card" href="https://github.com/tzigmond" target="_blank" rel="noopener">
           <span class="contact-label">GitHub</span>
           <span class="contact-value">github.com/tzigmond ↗</span>
+        </a>
+        <a class="contact-card" href="https://www.linkedin.com/in/teaganzigmond/" target="_blank" rel="noopener">
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">in/teaganzigmond ↗</span>
         </a>
       </div>
     </div>
