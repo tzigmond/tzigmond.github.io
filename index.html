@@ -13,6 +13,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script>
+  (function () {
+    var t = localStorage.getItem("theme");
+    if (t !== "dark" && t !== "light") {
+      t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    document.documentElement.setAttribute("data-theme", t);
+  })();
+</script>
 </head>
 <body>
 
@@ -23,6 +32,10 @@
     <a href="#skills">Skills</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+    </button>
   </div>
 </nav>
 
@@ -66,17 +79,17 @@
           <span class="badge badge-orange">Flagship</span>
         </div>
         <p class="project-lede">
-          A high-performance C++20 limit order book that streams live BTC/USD market
-          data from Kraken's WebSocket feed straight into a React dashboard. Built
-          around a lock-free, cache-line-aligned SPSC ring buffer and a flat-array
-          order book — no trees, no locks on the hot path.
+          A trading order book — the structure every exchange uses to match buyers
+          with sellers — rebuilt in C++ for raw speed. It streams live Bitcoin prices
+          from Kraken and updates the book in billionths of a second, using a
+          lock-free design that never stalls, then feeds it all to a live web dashboard.
         </p>
 
         <div class="stat-grid">
-          <div class="stat"><span class="stat-num">32<small>ns</small></span><span class="stat-label">p50 insert / update / delete</span></div>
-          <div class="stat"><span class="stat-num">128<small>ns</small></span><span class="stat-label">p99.9 tail latency</span></div>
-          <div class="stat"><span class="stat-num">16<small>ns</small></span><span class="stat-label">best bid / ask lookup</span></div>
-          <div class="stat"><span class="stat-num">2<small>M</small></span><span class="stat-label">ops benchmarked, 50-level depth</span></div>
+          <div class="stat"><span class="stat-num">30<small> million</small></span><span class="stat-label">order updates per second</span></div>
+          <div class="stat"><span class="stat-num">32<small> nanoseconds</small></span><span class="stat-label">to add or cancel an order</span></div>
+          <div class="stat"><span class="stat-num">16<small> nanoseconds</small></span><span class="stat-label">to read the current best price</span></div>
+          <div class="stat"><span class="stat-num">Live</span><span class="stat-label">real Bitcoin / USD data from Kraken</span></div>
         </div>
 
         <div class="pipeline">
@@ -112,15 +125,15 @@
           <span class="badge badge-green">Simulation</span>
         </div>
         <p class="project-lede">
-          A 3D simulation of an AIM-120 AMRAAM pursuing an F-16C using proportional
-          navigation guidance. Models boost-phase acceleration to Mach 4, gravity,
-          g-limits, radar-warning-receiver detection, and chained S-turn evasion —
-          rendered as an animated 3D flight path with a live HUD.
+          A physics simulation of a guided missile chasing a fighter jet. The missile
+          steers using proportional navigation — the same guidance principle real
+          missiles use — while the jet tries to escape with hard evasive turns. The
+          whole pursuit plays out as an animated 3D flight path with a live readout.
         </p>
         <div class="stat-grid stat-grid-3">
-          <div class="stat"><span class="stat-num">N=5</span><span class="stat-label">proportional-nav constant</span></div>
-          <div class="stat"><span class="stat-num">40<small>g</small></span><span class="stat-label">missile / 9g airframe limit</span></div>
-          <div class="stat"><span class="stat-num">Mach 4</span><span class="stat-label">boost-phase peak</span></div>
+          <div class="stat"><span class="stat-num">4×</span><span class="stat-label">the speed of sound at top speed</span></div>
+          <div class="stat"><span class="stat-num">40×</span><span class="stat-label">the force of gravity in hard turns</span></div>
+          <div class="stat"><span class="stat-num">3D</span><span class="stat-label">real-time animated intercept</span></div>
         </div>
         <div class="tags">
           <span>Python</span><span>NumPy</span><span>Matplotlib</span><span>Physics</span>
