@@ -91,8 +91,8 @@
         </p>
 
         <div class="stat-grid">
-          <div class="stat"><span class="stat-num">~33<small> nanoseconds</small></span><span class="stat-label">to add or cancel an order</span></div>
-          <div class="stat"><span class="stat-num">~1.5<small> nanoseconds</small></span><span class="stat-label">to read the current best price</span></div>
+          <div class="stat"><span class="stat-num">~33<small> nanoseconds</small></span><span class="stat-label">per book update (single-threaded, in-memory)</span></div>
+          <div class="stat"><span class="stat-num">O(1)</span><span class="stat-label">constant-time best bid / ask read</span></div>
           <div class="stat"><span class="stat-num">Lock-free</span><span class="stat-label">SPSC hand-off, no mutex on the hot path</span></div>
           <div class="stat"><span class="stat-num">Live</span><span class="stat-label">real Bitcoin / USD data from Kraken</span></div>
         </div>
