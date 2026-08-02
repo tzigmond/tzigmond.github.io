@@ -103,25 +103,128 @@ strong { font-weight: 600; color: var(--ink); }
 }
 .nav-links a:hover { color: var(--orange); }
 
-.theme-toggle {
+/* Animated wall light switch: lever up = light, lever down = dark. */
+.light-switch {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
-  padding: 0;
-  border: 1px solid var(--border-strong);
-  border-radius: 50%;
-  background: transparent;
-  color: var(--ink-dim);
+  padding: 2px;
+  /* let the switch stand taller than the text links without growing the navbar */
+  margin: -8px 0;
+  border: none;
+  background: none;
   cursor: pointer;
-  transition: color 0.15s, border-color 0.15s, transform 0.12s;
+  -webkit-tap-highlight-color: transparent;
 }
-.theme-toggle:hover { color: var(--orange); border-color: var(--orange); transform: translateY(-1px); }
-.theme-toggle .icon-sun { display: none; }
-.theme-toggle .icon-moon { display: block; }
-:root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
-:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+.light-switch:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; border-radius: 10px; }
+
+.ls-plate {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 30px;
+  height: 46px;
+  padding: 4px 0;
+  border-radius: 8px;
+  background: linear-gradient(158deg, #fbf7ec 0%, #efe6d0 100%);
+  border: 1px solid var(--border-strong);
+  box-shadow: inset 0 1px 0 #ffffffcc, 0 4px 10px -6px #3a2f1c66;
+  transition: background 0.25s ease, box-shadow 0.25s ease, border-color 0.2s ease;
+}
+:root[data-theme="dark"] .ls-plate {
+  background: linear-gradient(158deg, #2b2f36 0%, #1f2228 100%);
+  border-color: #3c4149;
+  box-shadow: inset 0 1px 0 #ffffff14, 0 4px 12px -6px #00000088;
+}
+
+/* warm "light is on" glow above the plate, fades out in dark mode */
+.ls-plate::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  width: 24px;
+  height: 15px;
+  margin-left: -12px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, var(--orange-soft), transparent 70%);
+  opacity: 0.55;
+  filter: blur(2px);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+:root[data-theme="dark"] .ls-plate::after { opacity: 0; }
+
+/* faux mounting screws, top and bottom */
+.ls-screw {
+  position: relative;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  flex: none;
+  background: radial-gradient(circle at 35% 35%, #d9cba9, #b09b70);
+}
+:root[data-theme="dark"] .ls-screw { background: radial-gradient(circle at 35% 35%, #565c66, #33373d); }
+.ls-screw::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 3px;
+  height: 1px;
+  background: #00000055;
+  transform: rotate(45deg);
+}
+
+/* recessed slot the lever rides in */
+.ls-rocker {
+  position: relative;
+  width: 16px;
+  height: 26px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #e5dcc4, #d3c7a6);
+  box-shadow: inset 0 2px 4px #00000033, inset 0 -1px 0 #ffffff88;
+  perspective: 120px;
+}
+:root[data-theme="dark"] .ls-rocker {
+  background: linear-gradient(180deg, #16181c, #212429);
+  box-shadow: inset 0 2px 5px #000000aa, inset 0 -1px 0 #ffffff0d;
+}
+
+/* the toggle lever (bat handle) */
+.ls-bat {
+  position: absolute;
+  left: 50%;
+  top: 2px;
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #ffffff 0%, #efe7d4 45%, #d9ccac 100%);
+  box-shadow: 0 3px 5px -1px #00000055, inset 0 1px 0 #ffffff;
+  transform-origin: center bottom;
+  transform: translateY(0) rotateX(20deg);           /* up = light */
+  transition: transform 0.42s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.25s ease;
+}
+:root[data-theme="dark"] .ls-bat {
+  transform: translateY(12px) rotateX(-20deg);       /* down = dark */
+  background: linear-gradient(180deg, #4a505a 0%, #363b43 55%, #2a2e35 100%);
+  box-shadow: 0 -3px 5px -1px #00000066, inset 0 1px 0 #ffffff22;
+}
+
+.light-switch:hover .ls-plate { border-color: var(--orange); }
+.light-switch:hover .ls-bat { filter: brightness(1.05); }
+.light-switch:active .ls-bat { transition-duration: 0.2s; }
+
+/* keep the lever animating even during the page-wide transition freeze */
+:root.theme-switching .ls-bat {
+  transition: transform 0.42s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ls-bat, :root.theme-switching .ls-bat { transition: none !important; }
+}
 
 /* ---------- hero ---------- */
 .hero {
