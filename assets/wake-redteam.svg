@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420"><rect width="760" height="420" fill="#0c131b"/>
+<text x="64.0" y="26.0" font-size="16" fill="#c9d8e8" text-anchor="start" font-family="monospace">Failure rate vs adversarial pressure</text>
+<text x="64.0" y="44.0" font-size="11" fill="#6d829a" text-anchor="start" font-family="monospace">share of model claims that fail verification -- without vs with the external verifier</text>
+<line x1="64" y1="344.0" x2="736" y2="344.0" stroke="#1b2836" stroke-width="1"/>
+<text x="56.0" y="348.0" font-size="10" fill="#6d829a" text-anchor="end" font-family="monospace">0%</text>
+<line x1="64" y1="272.0" x2="736" y2="272.0" stroke="#1b2836" stroke-width="1"/>
+<text x="56.0" y="276.0" font-size="10" fill="#6d829a" text-anchor="end" font-family="monospace">12%</text>
+<line x1="64" y1="200.0" x2="736" y2="200.0" stroke="#1b2836" stroke-width="1"/>
+<text x="56.0" y="204.0" font-size="10" fill="#6d829a" text-anchor="end" font-family="monospace">25%</text>
+<line x1="64" y1="128.0" x2="736" y2="128.0" stroke="#1b2836" stroke-width="1"/>
+<text x="56.0" y="132.0" font-size="10" fill="#6d829a" text-anchor="end" font-family="monospace">38%</text>
+<line x1="64" y1="56.0" x2="736" y2="56.0" stroke="#1b2836" stroke-width="1"/>
+<text x="56.0" y="60.0" font-size="10" fill="#6d829a" text-anchor="end" font-family="monospace">50%</text>
+<rect x="90.6" y="304.3" width="37.6" height="39.7" fill="#ff4d5e" fill-opacity="0.85" rx="2"/>
+<rect x="134.2" y="344.0" width="37.6" height="0.0" fill="#35d0d8" fill-opacity="0.95" rx="2"/>
+<text x="109.4" y="298.3" font-size="11" fill="#ff4d5e" text-anchor="middle" font-family="monospace">7%</text>
+<text x="153.0" y="338.0" font-size="11" fill="#35d0d8" text-anchor="middle" font-family="monospace">0%</text>
+<text x="131.2" y="362.0" font-size="12" fill="#c9d8e8" text-anchor="middle" font-family="monospace">baseline</text>
+<text x="131.2" y="378.0" font-size="9" fill="#6d829a" text-anchor="middle" font-family="monospace">29 claims / 6 runs</text>
+<rect x="225.0" y="269.7" width="37.6" height="74.3" fill="#ff4d5e" fill-opacity="0.85" rx="2"/>
+<rect x="268.6" y="344.0" width="37.6" height="0.0" fill="#35d0d8" fill-opacity="0.95" rx="2"/>
+<text x="243.8" y="263.7" font-size="11" fill="#ff4d5e" text-anchor="middle" font-family="monospace">13%</text>
+<text x="287.4" y="338.0" font-size="11" fill="#35d0d8" text-anchor="middle" font-family="monospace">0%</text>
+<text x="265.6" y="362.0" font-size="12" fill="#c9d8e8" text-anchor="middle" font-family="monospace">injection</text>
+<text x="265.6" y="378.0" font-size="9" fill="#6d829a" text-anchor="middle" font-family="monospace">31 claims / 6 runs</text>
+<rect x="359.4" y="209.6" width="37.6" height="134.4" fill="#ff4d5e" fill-opacity="0.85" rx="2"/>
+<rect x="403.0" y="344.0" width="37.6" height="0.0" fill="#35d0d8" fill-opacity="0.95" rx="2"/>
+<text x="378.2" y="203.6" font-size="11" fill="#ff4d5e" text-anchor="middle" font-family="monospace">23%</text>
+<text x="421.8" y="338.0" font-size="11" fill="#35d0d8" text-anchor="middle" font-family="monospace">0%</text>
+<text x="400.0" y="362.0" font-size="12" fill="#c9d8e8" text-anchor="middle" font-family="monospace">no_caveats</text>
+<text x="400.0" y="378.0" font-size="9" fill="#6d829a" text-anchor="middle" font-family="monospace">30 claims / 6 runs</text>
+<rect x="493.8" y="195.4" width="37.6" height="148.6" fill="#ff4d5e" fill-opacity="0.85" rx="2"/>
+<rect x="537.4" y="325.4" width="37.6" height="18.6" fill="#35d0d8" fill-opacity="0.95" rx="2"/>
+<text x="512.6" y="189.4" font-size="11" fill="#ff4d5e" text-anchor="middle" font-family="monospace">26%</text>
+<text x="556.2" y="319.4" font-size="11" fill="#35d0d8" text-anchor="middle" font-family="monospace">3%</text>
+<text x="534.4" y="362.0" font-size="12" fill="#c9d8e8" text-anchor="middle" font-family="monospace">poison</text>
+<text x="534.4" y="378.0" font-size="9" fill="#6d829a" text-anchor="middle" font-family="monospace">31 claims / 6 runs</text>
+<rect x="628.2" y="179.4" width="37.6" height="164.6" fill="#ff4d5e" fill-opacity="0.85" rx="2"/>
+<rect x="671.8" y="344.0" width="37.6" height="0.0" fill="#35d0d8" fill-opacity="0.95" rx="2"/>
+<text x="647.0" y="173.4" font-size="11" fill="#ff4d5e" text-anchor="middle" font-family="monospace">29%</text>
+<text x="690.6" y="338.0" font-size="11" fill="#35d0d8" text-anchor="middle" font-family="monospace">0%</text>
+<text x="668.8" y="362.0" font-size="12" fill="#c9d8e8" text-anchor="middle" font-family="monospace">amnesia</text>
+<text x="668.8" y="378.0" font-size="9" fill="#6d829a" text-anchor="middle" font-family="monospace">28 claims / 6 runs</text>
+<rect x="64.0" y="384.0" width="12.0" height="12.0" fill="#ff4d5e" fill-opacity="0.85" rx="2"/>
+<text x="82.0" y="394.0" font-size="11" fill="#c9d8e8" text-anchor="start" font-family="monospace">would ship without verifier</text>
+<rect x="314.0" y="384.0" width="12.0" height="12.0" fill="#35d0d8" fill-opacity="0.95" rx="2"/>
+<text x="332.0" y="394.0" font-size="11" fill="#c9d8e8" text-anchor="start" font-family="monospace">ships with verifier in place</text>
+</svg>

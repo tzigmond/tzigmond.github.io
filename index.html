@@ -80,6 +80,70 @@
     <article class="project project-featured">
       <div class="project-body">
         <div class="project-title-row">
+          <h3>WAKE</h3>
+          <span class="badge badge-orange">Defense flagship</span>
+        </div>
+        <p class="project-lede">
+          Sanctioned oil tankers hide by switching off the transponders that broadcast
+          their position, usually right next to the terminal where they load. WAKE fuses
+          public ship-tracking feeds, sanctions lists and corporate ownership records to
+          surface those disappearances — and holds itself to one rule: a detection only
+          counts if it can be checked against outside evidence, never because it happened
+          somewhere suspicious. Of the ten vessels it ranked highest for going dark near
+          Russian Baltic oil terminals, three turned out to be independently documented
+          AIS-disablers in exactly those waters.
+        </p>
+        <p class="project-lede">
+          The harder half is the AI. A language model running locally writes the
+          intelligence assessment, and a separate program — deliberately not another
+          model — checks every sentence against the exact record it cites and deletes the
+          ones that do not hold up. Then I attack it: inject fake evidence, strip the
+          safeguards, hide the data, and measure how much worse it gets. The failure rate
+          quadruples under pressure. The verifier catches all of it except one case, and
+          that one is the blind spot the design predicted.
+        </p>
+
+        <div class="stat-grid">
+          <div class="stat"><span class="stat-num">3<small> of 10</small></span><span class="stat-label">top-ranked vessels independently corroborated as AIS-disablers</span></div>
+          <div class="stat"><span class="stat-num">0.93</span><span class="stat-label">identity-matching precision when it is allowed to abstain</span></div>
+          <div class="stat"><span class="stat-num">6.9 → 28.6<small>%</small></span><span class="stat-label">model failure rate as adversarial pressure increases</span></div>
+          <div class="stat"><span class="stat-num">1<small> of 30</small></span><span class="stat-label">failures that survived the verifier — the predicted blind spot</span></div>
+        </div>
+
+        <figure class="project-figure">
+          <img src="assets/wake-redteam.svg?v=1" alt="Bar chart of AI failure rate versus adversarial pressure. Across five conditions — baseline, prompt injection, stripped safeguards, poisoned evidence and removed data — the share of claims that would have shipped without verification rises from 6.9 percent to 28.6 percent, while the share that ships with the external verifier in place stays at zero except under evidence poisoning." loading="lazy">
+          <figcaption>What the project is really about: not that the AI is smart, but exactly when it can be fooled — and how much of that a verifier outside the model can catch. The one case it cannot is evidence poisoning, where the model cites a fabricated record correctly and a citation checker has nothing to catch it with.</figcaption>
+        </figure>
+
+        <div class="pipeline">
+          <span>AIS feeds</span><i>→</i><span>PostGIS + entity resolution</span><i>→</i><span>Dark-gap / rendezvous / spoofing detectors</span><i>→</i><span>Cited evidence bundle</span><i>→</i><span>Local LLM</span><i>→</i><span>External verifier</span>
+        </div>
+
+        <div class="tags">
+          <span>Python</span><span>PostgreSQL</span><span>PostGIS</span><span>FastAPI</span>
+          <span>MapLibre</span><span>Ollama</span><span>Oracle Cloud</span><span>systemd</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/tzigmond/wake" target="_blank" rel="noopener">View source ↗</a>
+        </div>
+      </div>
+      <div class="project-visual" aria-hidden="true">
+        <div class="depth">
+          <div class="depth-side depth-bids">
+            <span style="--w:88%"></span><span style="--w:64%"></span><span style="--w:40%"></span><span style="--w:22%"></span><span style="--w:10%"></span>
+          </div>
+          <div class="depth-mid">GONE DARK</div>
+          <div class="depth-side depth-asks">
+            <span style="--w:12%"></span><span style="--w:26%"></span><span style="--w:45%"></span><span style="--w:70%"></span><span style="--w:92%"></span>
+          </div>
+        </div>
+        <span class="visual-caption">a vessel's track, interrupted</span>
+      </div>
+    </article>
+
+    <article class="project project-featured">
+      <div class="project-body">
+        <div class="project-title-row">
           <h3>LOBSTER</h3>
           <span class="badge badge-orange">Flagship</span>
         </div>
